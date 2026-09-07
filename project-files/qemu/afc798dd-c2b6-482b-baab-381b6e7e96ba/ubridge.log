@@ -1,0 +1,6 @@
+uBridge version 1.0.1 running with libpcap version 1.10.6 (64-bit time_t, with TPACKET_V3)
+Hypervisor TCP control server started (IP localhost port 36575).
+UDP tunnel connecting from local port 10191 to IPv4 address 127.0.0.1 on port 10190
+UDP tunnel connecting from local port 10368 to IPv4 address 127.0.0.1 on port 10369
+Destination NIO listener thread for QEMU-afc798dd-c2b6-482b-baab-381b6e7e96ba-3 has started
+Source NIO listener thread for QEMU-afc798dd-c2b6-482b-baab-381b6e7e96ba-3 has started

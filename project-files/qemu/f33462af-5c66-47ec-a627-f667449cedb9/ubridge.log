@@ -1,0 +1,59 @@
+uBridge version 1.0.1 running with libpcap version 1.10.6 (64-bit time_t, with TPACKET_V3)
+Hypervisor TCP control server started (IP localhost port 44309).
+UDP tunnel connecting from local port 10285 to IPv4 address 127.0.0.1 on port 10284
+UDP tunnel connecting from local port 10294 to IPv4 address 127.0.0.1 on port 10295
+Source NIO listener thread for QEMU-f33462af-5c66-47ec-a627-f667449cedb9-0 has started
+Destination NIO listener thread for QEMU-f33462af-5c66-47ec-a627-f667449cedb9-0 has started
+UDP tunnel connecting from local port 10285 to IPv4 address 127.0.0.1 on port 10284
+UDP tunnel connecting from local port 10295 to IPv4 address 127.0.0.1 on port 10294
+Destination NIO listener thread for QEMU-f33462af-5c66-47ec-a627-f667449cedb9-0 has started
+Source NIO listener thread for QEMU-f33462af-5c66-47ec-a627-f667449cedb9-0 has started
+UDP tunnel connecting from local port 10287 to IPv4 address 127.0.0.1 on port 10286
+UDP tunnel connecting from local port 10297 to IPv4 address 127.0.0.1 on port 10296
+Source NIO listener thread for QEMU-f33462af-5c66-47ec-a627-f667449cedb9-1 has started
+Destination NIO listener thread for QEMU-f33462af-5c66-47ec-a627-f667449cedb9-1 has started
+recv: Connection refused
+recv: Connection refused
+recv: Connection refused
+recv: Connection refused
+recv: Connection refused
+send: Connection refused
+recv: Connection refused
+recv: Connection refused
+recv: Connection refused
+recv: Connection refused
+recv: Connection refused
+recv: Connection refused
+recv: Connection refused
+recv: Connection refused
+UDP tunnel connecting from local port 10289 to IPv4 address 127.0.0.1 on port 10288
+UDP tunnel connecting from local port 10296 to IPv4 address 127.0.0.1 on port 10297
+Source NIO listener thread for QEMU-f33462af-5c66-47ec-a627-f667449cedb9-2 has started
+Destination NIO listener thread for QEMU-f33462af-5c66-47ec-a627-f667449cedb9-2 has started
+UDP tunnel connecting from local port 10291 to IPv4 address 127.0.0.1 on port 10290
+UDP tunnel connecting from local port 10301 to IPv4 address 127.0.0.1 on port 10300
+Source NIO listener thread for QEMU-f33462af-5c66-47ec-a627-f667449cedb9-3 has started
+Destination NIO listener thread for QEMU-f33462af-5c66-47ec-a627-f667449cedb9-3 has started
+recv: Connection refused
+recv: Connection refused
+recv: Connection refused
+recv: Connection refused
+recv: Connection refused
+UDP tunnel connecting from local port 10293 to IPv4 address 127.0.0.1 on port 10292
+UDP tunnel connecting from local port 10305 to IPv4 address 127.0.0.1 on port 10304
+Destination NIO listener thread for QEMU-f33462af-5c66-47ec-a627-f667449cedb9-4 has started
+Source NIO listener thread for QEMU-f33462af-5c66-47ec-a627-f667449cedb9-4 has started
+recv: Connection refused
+recv: Connection refused
+recv: Connection refused
+recv: Connection refused
+recv: Connection refused
+recv: Connection refused
+recv: Connection refused
+recv: Connection refused
+recv: Connection refused
+recv: Connection refused
+recv: Connection refused
+recv: Connection refused
+recv: Connection refused
+recv: Connection refused

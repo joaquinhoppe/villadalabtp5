@@ -1,0 +1,1 @@
+Formatting '/home/nicolasf/GNS3/projects/tp5/project-files/qemu/38a5baad-373b-42e2-bc4e-1821d8f0954d/hda_disk.qcow2', fmt=qcow2 cluster_size=65536 extended_l2=off compression_type=zlib size=134217728 backing_file=/home/nicolasf/Descargas/chr-7.21.5.img backing_fmt=raw lazy_refcounts=off refcount_bits=16
