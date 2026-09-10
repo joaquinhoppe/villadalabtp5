@@ -1,0 +1,269 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 840" width="100%" height="100%" style="background-color: #0b1329; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
+  <defs>
+    <linearGradient id="wanGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b"/>
+      <stop offset="100%" stop-color="#334155"/>
+    </linearGradient>
+    <linearGradient id="mtkGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e3a8a"/>
+      <stop offset="100%" stop-color="#2563eb"/>
+    </linearGradient>
+    <linearGradient id="rpiGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#064e3b"/>
+      <stop offset="100%" stop-color="#059669"/>
+    </linearGradient>
+    <linearGradient id="testGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#78350f"/>
+      <stop offset="100%" stop-color="#d97706"/>
+    </linearGradient>
+    <linearGradient id="hostGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b"/>
+      <stop offset="100%" stop-color="#2c3e50"/>
+    </linearGradient>
+    <linearGradient id="vmGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#312e81"/>
+      <stop offset="100%" stop-color="#4f46e5"/>
+    </linearGradient>
+    <filter id="boxShadow" x="-5%" y="-5%" width="110%" height="115%">
+      <feDropShadow dx="0" dy="5" stdDeviation="5" flood-color="#000000" flood-opacity="0.5"/>
+    </filter>
+    <marker id="arrowBlue" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#38bdf8"/>
+    </marker>
+    <marker id="arrowGreen" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#10b981"/>
+    </marker>
+    <marker id="arrowAmber" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#f59e0b"/>
+    </marker>
+  </defs>
+
+  <!-- Title Header -->
+  <text x="540" y="34" text-anchor="middle" fill="#f8fafc" font-size="20" font-weight="700" letter-spacing="0.5">TOPOLOGÍA FÍSICA DETALLADA — LABORATORIO TP5</text>
+  <text x="540" y="56" text-anchor="middle" fill="#94a3b8" font-size="13">Interconexión física, direccionamiento IP, interfaces y roles definitivos en VLAN 80 Servidores</text>
+
+  <!-- 1. WAN Uplink & iPhone Area -->
+  <g transform="translate(230, 75)">
+    <rect width="620" height="85" rx="12" fill="url(#wanGrad)" stroke="#64748b" stroke-width="1.5" filter="url(#boxShadow)"/>
+
+    <!-- ISP Cloud Tag -->
+    <rect x="20" y="16" width="190" height="52" rx="8" fill="#0f172a" stroke="#475569" stroke-width="1"/>
+    <text x="115" y="36" text-anchor="middle" fill="#38bdf8" font-size="12" font-weight="700">INTERNET 4G / LTE</text>
+    <text x="115" y="53" text-anchor="middle" fill="#94a3b8" font-size="10.5">IP Pública: 181.238.34.137</text>
+
+    <!-- Arrow between Cloud and iPhone -->
+    <line x1="215" y1="42" x2="255" y2="42" stroke="#38bdf8" stroke-width="2"/>
+
+    <!-- iPhone Hotspot Box -->
+    <rect x="260" y="10" width="340" height="64" rx="8" fill="#1e293b" stroke="#0ea5e9" stroke-width="1.5"/>
+    <circle cx="285" cy="42" r="14" fill="#0284c7"/>
+    <text x="285" y="47" text-anchor="middle" fill="#ffffff" font-size="13">📱</text>
+    <text x="310" y="31" fill="#f8fafc" font-size="13" font-weight="700">Apple iPhone — Personal Hotspot</text>
+    <text x="310" y="48" fill="#38bdf8" font-size="11.5">SSID: Valentino-iPhone (2.4 GHz) · Gateway: 172.20.10.1</text>
+    <text x="310" y="62" fill="#cbd5e1" font-size="10">Subred Celular: 172.20.10.0/28 (Entregada por DHCP)</text>
+  </g>
+
+  <!-- Wireless Connection Link -->
+  <g transform="translate(540, 160)">
+    <line x1="0" y1="0" x2="0" y2="42" stroke="#0ea5e9" stroke-width="2.5" stroke-dasharray="6,4"/>
+    <rect x="-90" y="11" width="180" height="20" rx="6" fill="#0f172a" stroke="#0ea5e9" stroke-width="1"/>
+    <text x="0" y="25" text-anchor="middle" fill="#38bdf8" font-size="10" font-weight="600">Wi-Fi 2.4 GHz (WPA2-PSK)</text>
+  </g>
+
+  <!-- 2. MikroTik Router / Switch (Central Node) -->
+  <g transform="translate(80, 205)">
+    <rect width="920" height="205" rx="14" fill="#0f172a" stroke="#2563eb" stroke-width="2" filter="url(#boxShadow)"/>
+
+    <!-- Top Bar -->
+    <rect x="0" y="0" width="920" height="38" rx="14" fill="url(#mtkGrad)"/>
+    <rect x="0" y="24" width="920" height="14" fill="#2563eb"/>
+    <text x="24" y="24" fill="#ffffff" font-size="15" font-weight="700">🖧 MikroTik hAP ac lite (RB952Ui-5ac2nD)</text>
+    <text x="896" y="24" text-anchor="end" fill="#bfdbfe" font-size="11.5">RouterOS v6.49.13 (stable) · MAC: D4:01:C3:C7:C1:B4</text>
+
+    <!-- Sub-elements inside MikroTik -->
+    <!-- WAN Interface -->
+    <g transform="translate(20, 50)">
+      <rect width="270" height="64" rx="8" fill="#1e293b" stroke="#0ea5e9" stroke-width="1"/>
+      <text x="12" y="22" fill="#38bdf8" font-size="12" font-weight="700">wlan1 (Station WAN)</text>
+      <text x="12" y="40" fill="#f1f5f9" font-size="11">IP: 172.20.10.5/28 (DHCP)</text>
+      <text x="12" y="55" fill="#94a3b8" font-size="9.5">dhcp-options=hostname (Compatibilidad)</text>
+    </g>
+
+    <!-- Bridge & VLAN Filtering -->
+    <g transform="translate(310, 50)">
+      <rect width="290" height="64" rx="8" fill="#1e293b" stroke="#3b82f6" stroke-width="1"/>
+      <text x="12" y="22" fill="#60a5fa" font-size="12" font-weight="700">Bridge VLAN Filtering</text>
+      <text x="12" y="40" fill="#f1f5f9" font-size="11">protocol-mode=rstp (priority=0x9000)</text>
+      <text x="12" y="55" fill="#94a3b8" font-size="9.5">vlan-filtering=yes · VLAN 80 untagged</text>
+    </g>
+
+    <!-- SVIs & NAT/QoS -->
+    <g transform="translate(620, 50)">
+      <rect width="280" height="64" rx="8" fill="#1e293b" stroke="#f59e0b" stroke-width="1"/>
+      <text x="12" y="20" fill="#fbbf24" font-size="11.5" font-weight="700">SVIs en Bridge &amp; QoS</text>
+      <text x="12" y="37" fill="#fef3c7" font-size="10.5">vlan80-serv: 172.18.2.225/28 (Gateway)</text>
+      <text x="12" y="54" fill="#94a3b8" font-size="9.5">vlan70-mgmt: 172.18.2.91/29 · Simple Queue</text>
+    </g>
+
+    <!-- Ports Row at Bottom -->
+    <g transform="translate(20, 126)">
+      <!-- ether1 -->
+      <rect x="0" y="0" width="180" height="60" rx="6" fill="#1e293b" stroke="#475569" stroke-width="1"/>
+      <text x="12" y="22" fill="#94a3b8" font-size="11" font-weight="700">ether1 (Desconectado)</text>
+      <text x="12" y="40" fill="#64748b" font-size="10">Lab autónomo</text>
+      <text x="12" y="52" fill="#475569" font-size="9">Sin trunk a Cisco físico</text>
+
+      <!-- ether2 -->
+      <rect x="195" y="0" width="220" height="60" rx="6" fill="#1e293b" stroke="#38bdf8" stroke-width="1.5"/>
+      <text x="12" y="20" fill="#38bdf8" font-size="11.5" font-weight="700">ether2 (Access PVID 80)</text>
+      <text x="12" y="38" fill="#f1f5f9" font-size="10.5">UTP ➔ Notebook + VM</text>
+      <text x="12" y="52" fill="#94a3b8" font-size="9.5">Host .229 + VM Sec .228</text>
+
+      <!-- ether3 -->
+      <rect x="430" y="0" width="225" height="60" rx="6" fill="#1e293b" stroke="#10b981" stroke-width="1.5"/>
+      <text x="12" y="20" fill="#34d399" font-size="11.5" font-weight="700">ether3 (Access PVID 80)</text>
+      <text x="12" y="38" fill="#f1f5f9" font-size="10.5">UTP ➔ Raspberry Pi</text>
+      <text x="12" y="52" fill="#94a3b8" font-size="9.5">DHCP Primario .227</text>
+
+      <!-- ether4 -->
+      <rect x="670" y="0" width="210" height="60" rx="6" fill="#1e293b" stroke="#f59e0b" stroke-width="1.5"/>
+      <text x="12" y="20" fill="#fbbf24" font-size="11.5" font-weight="700">ether4 (Access PVID 80)</text>
+      <text x="12" y="38" fill="#fef3c7" font-size="10.5">UTP ➔ Cliente de Prueba</text>
+      <text x="12" y="52" fill="#fcd34d" font-size="9.5">Pool Dinámico .236</text>
+    </g>
+  </g>
+
+  <!-- Downward Cables from MikroTik -->
+  <!-- ether3 Cable to RPi -->
+  <path d="M 620 391 L 620 440 L 190 440 L 190 480" fill="none" stroke="#10b981" stroke-width="3"/>
+  <rect x="310" y="430" width="170" height="18" rx="4" fill="#064e3b" stroke="#10b981" stroke-width="1"/>
+  <text x="395" y="443" text-anchor="middle" fill="#a7f3d0" font-size="9.5" font-weight="600">ether3 (VLAN 80 untagged)</text>
+
+  <!-- ether4 Cable to Test Client Notebook -->
+  <path d="M 855 391 L 855 455 L 540 455 L 540 480" fill="none" stroke="#f59e0b" stroke-width="3"/>
+  <rect x="630" y="446" width="170" height="18" rx="4" fill="#78350f" stroke="#f59e0b" stroke-width="1"/>
+  <text x="715" y="459" text-anchor="middle" fill="#fef3c7" font-size="9.5" font-weight="600">ether4 (VLAN 80 untagged)</text>
+
+  <!-- ether2 Cable to Notebook Host/VM -->
+  <path d="M 385 391 L 385 470 L 890 470 L 890 480" fill="none" stroke="#38bdf8" stroke-width="3"/>
+
+  <!-- 3. Bottom Row: 3 Endpoint Devices -->
+
+  <!-- NODE 1: RASPBERRY PI (Left Box) -->
+  <g transform="translate(30, 480)">
+    <rect width="320" height="325" rx="12" fill="#0f172a" stroke="#059669" stroke-width="2" filter="url(#boxShadow)"/>
+    <rect x="0" y="0" width="320" height="36" rx="12" fill="url(#rpiGrad)"/>
+    <rect x="0" y="22" width="320" height="14" fill="#059669"/>
+    <text x="16" y="24" fill="#ffffff" font-size="13" font-weight="700">🐧 Raspberry Pi 3B (Debian 13)</text>
+
+    <g transform="translate(14, 46)">
+      <rect width="292" height="46" rx="6" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+      <text x="10" y="18" fill="#34d399" font-size="10.5" font-weight="700">Interfaz eth0 (NetworkManager)</text>
+      <text x="10" y="34" fill="#f1f5f9" font-size="10">IP: 172.18.2.227/28 · MAC: B8:27:EB:3F:23:C0</text>
+    </g>
+
+    <g transform="translate(14, 100)">
+      <rect width="292" height="75" rx="6" fill="#1e293b" stroke="#059669" stroke-width="1"/>
+      <text x="10" y="18" fill="#34d399" font-size="10.5" font-weight="700">ISC DHCP Server 4.4.3</text>
+      <text x="10" y="34" fill="#f8fafc" font-size="10">Rol: Failover PRIMARY (split 256;)</text>
+      <text x="10" y="50" fill="#94a3b8" font-size="9.5">10 Scopes corporativos + Reserva .229</text>
+      <text x="10" y="66" fill="#a7f3d0" font-size="9">Atiende Pool Dinámico (.230-.238)</text>
+    </g>
+
+    <g transform="translate(14, 183)">
+      <rect width="292" height="52" rx="6" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+      <text x="10" y="18" fill="#fbbf24" font-size="10" font-weight="700">Persistencia NetworkManager</text>
+      <text x="10" y="33" fill="#cbd5e1" font-size="9.5">autoconnect=yes · priority=100</text>
+      <text x="10" y="46" fill="#94a3b8" font-size="9">Perfil duplicado desactivado (no-autoconnect)</text>
+    </g>
+
+    <g transform="translate(14, 243)">
+      <rect width="292" height="68" rx="6" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+      <text x="10" y="18" fill="#cbd5e1" font-size="10">Gateway: 172.18.2.225</text>
+      <text x="10" y="34" fill="#cbd5e1" font-size="10">DNS: 8.8.8.8, 1.1.1.1</text>
+      <text x="10" y="52" fill="#38bdf8" font-size="9.5">Navegación Internet WAN 4G: 🟢 PASS</text>
+    </g>
+  </g>
+
+  <!-- NODE 2: NOTEBOOK DE PRUEBA EXTERNA (Center Box) -->
+  <g transform="translate(380, 480)">
+    <rect width="320" height="325" rx="12" fill="#0f172a" stroke="#f59e0b" stroke-width="2" filter="url(#boxShadow)"/>
+    <rect x="0" y="0" width="320" height="36" rx="12" fill="url(#testGrad)"/>
+    <rect x="0" y="22" width="320" height="14" fill="#d97706"/>
+    <text x="16" y="24" fill="#ffffff" font-size="13" font-weight="700">💻 Cliente Externo (Notebook Prueba)</text>
+
+    <g transform="translate(14, 46)">
+      <rect width="292" height="46" rx="6" fill="#1e293b" stroke="#f59e0b" stroke-width="1"/>
+      <text x="10" y="18" fill="#fbbf24" font-size="10.5" font-weight="700">Puerto ether4 (Cliente Dinámico)</text>
+      <text x="10" y="34" fill="#fef3c7" font-size="10">Sin reserva estática · DHCP Automático</text>
+    </g>
+
+    <g transform="translate(14, 100)">
+      <rect width="292" height="75" rx="6" fill="#1e293b" stroke="#d97706" stroke-width="1"/>
+      <text x="10" y="18" fill="#fcd34d" font-size="10.5" font-weight="700">Asignación de Pool Dinámico</text>
+      <text x="10" y="34" fill="#f8fafc" font-size="10.5" font-weight="700">IP: 172.18.2.236/28</text>
+      <text x="10" y="50" fill="#cbd5e1" font-size="9.5">Máscara: 255.255.255.240 · GW: .225</text>
+      <text x="10" y="66" fill="#94a3b8" font-size="9">Pool VLAN 80: 172.18.2.230 – .238</text>
+    </g>
+
+    <g transform="translate(14, 183)">
+      <rect width="292" height="65" rx="6" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+      <text x="10" y="18" fill="#38bdf8" font-size="10" font-weight="700">Ciclo de Failover Validado</text>
+      <text x="10" y="33" fill="#cbd5e1" font-size="9.5">1. Primario .227 otorga IP .236</text>
+      <text x="10" y="47" fill="#f87171" font-size="9.5">2. Caída Primario ➔ Secundario .228 renueva</text>
+      <text x="10" y="60" fill="#34d399" font-size="9.5">3. Recuperación ➔ Primario .227 reasume</text>
+    </g>
+
+    <g transform="translate(14, 256)">
+      <rect width="292" height="55" rx="6" fill="#064e3b" stroke="#10b981" stroke-width="1"/>
+      <text x="10" y="18" fill="#6ee7b7" font-size="10" font-weight="700">Verificación de Internet Real</text>
+      <text x="10" y="33" fill="#a7f3d0" font-size="9.5">Wi-Fi local de la notebook: DESHABILITADO</text>
+      <text x="10" y="47" fill="#ffffff" font-size="9">Salida 100% por MikroTik .225 ➔ 4G LTE: 🟢 PASS</text>
+    </g>
+  </g>
+
+  <!-- NODE 3: NOTEBOOK PRINCIPAL + VM LINUX (Right Box) -->
+  <g transform="translate(730, 480)">
+    <rect width="320" height="325" rx="12" fill="#0f172a" stroke="#3b82f6" stroke-width="2" filter="url(#boxShadow)"/>
+    <rect x="0" y="0" width="320" height="36" rx="12" fill="url(#hostGrad)"/>
+    <rect x="0" y="22" width="320" height="14" fill="#2c3e50"/>
+    <text x="16" y="24" fill="#ffffff" font-size="13" font-weight="700">💻 Notebook Lenovo + VM Linux</text>
+
+    <!-- Host Info Realtek -->
+    <g transform="translate(14, 46)">
+      <rect width="292" height="58" rx="6" fill="#1e293b" stroke="#38bdf8" stroke-width="1"/>
+      <text x="10" y="18" fill="#38bdf8" font-size="10.5" font-weight="700">Host Windows 11 (Realtek USB FE)</text>
+      <text x="10" y="34" fill="#f1f5f9" font-size="10">Reserva MAC: 00:E0:4C:36:0C:B2</text>
+      <text x="10" y="49" fill="#7dd3fc" font-size="10">IP Fija: 172.18.2.229/28</text>
+    </g>
+
+    <!-- Embedded VM Secondary Box -->
+    <g transform="translate(14, 112)">
+      <rect width="292" height="130" rx="8" fill="#1e1b4b" stroke="#6366f1" stroke-width="1.5"/>
+      <text x="10" y="20" fill="#a5b4fc" font-size="11" font-weight="700">🐧 VM Ubuntu Server 26.04 LTS</text>
+      <text x="10" y="38" fill="#f1f5f9" font-size="10">Interfaz eth0: 172.18.2.228/28 (Netplan)</text>
+      <text x="10" y="54" fill="#c7d2fe" font-size="10">ISC DHCP Server 4.4.3</text>
+      <text x="10" y="70" fill="#fbbf24" font-size="10">Rol: Failover SECONDARY</text>
+      <text x="10" y="86" fill="#94a3b8" font-size="9.5">Socket TCP 647 (Hot-Standby Activo)</text>
+      <text x="10" y="102" fill="#818cf8" font-size="9">Modo Bridged exclusivo en adaptador Realtek</text>
+      <text x="10" y="118" fill="#38bdf8" font-size="9">Salida Internet WAN 4G: 🟢 PASS</text>
+    </g>
+
+    <!-- Rol Distinction Note -->
+    <g transform="translate(14, 250)">
+      <rect width="292" height="62" rx="6" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+      <text x="10" y="18" fill="#94a3b8" font-size="9.5" font-weight="600">Diferenciación de Clientes:</text>
+      <text x="10" y="33" fill="#cbd5e1" font-size="9">.229 = Reserva estática por hardware MAC</text>
+      <text x="10" y="47" fill="#cbd5e1" font-size="9">.236 = Cliente dinámico del pool en ether4</text>
+    </g>
+  </g>
+
+  <!-- TCP 647 Sync Arrow between RPi and VM (Arched at bottom) -->
+  <g transform="translate(200, 815)">
+    <path d="M 0 0 L 0 15 L 680 15 L 680 0" fill="none" stroke="#f59e0b" stroke-width="2.5" stroke-dasharray="5,3"/>
+    <polygon points="0,0 -4,6 4,6" fill="#f59e0b"/>
+    <polygon points="680,0 676,6 684,6" fill="#f59e0b"/>
+    <rect x="240" y="5" width="200" height="20" rx="4" fill="#78350f" stroke="#f59e0b" stroke-width="1"/>
+    <text x="340" y="19" text-anchor="middle" fill="#fef3c7" font-size="10" font-weight="700">TCP 647 FAILOVER SYNC</text>
+  </g>
+</svg>

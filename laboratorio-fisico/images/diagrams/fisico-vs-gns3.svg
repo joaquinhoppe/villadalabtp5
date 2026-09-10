@@ -1,0 +1,171 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 950 480" width="100%" height="100%" style="background-color: #0f172a; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
+  <!-- Definitions for gradients & markers -->
+  <defs>
+    <linearGradient id="greenGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#059669"/>
+      <stop offset="100%" stop-color="#10b981"/>
+    </linearGradient>
+    <linearGradient id="purpleGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#6d28d9"/>
+      <stop offset="100%" stop-color="#8b5cf6"/>
+    </linearGradient>
+    <linearGradient id="cardDark" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="115%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000" flood-opacity="0.4"/>
+    </filter>
+    <marker id="arrowGreen" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#10b981"/>
+    </marker>
+  </defs>
+
+  <!-- Title Section -->
+  <text x="475" y="38" text-anchor="middle" fill="#f8fafc" font-size="20" font-weight="700" letter-spacing="0.5">ALCANCE DE LA ARQUITECTURA: HARDWARE REAL VS SIMULACIÓN GNS3</text>
+  <text x="475" y="60" text-anchor="middle" fill="#94a3b8" font-size="13">Separación metodológica entre servicios centrales validados físicamente y la red troncal simulada</text>
+
+  <!-- Left Column: Laboratorio Físico (Green) -->
+  <g transform="translate(35, 80)">
+    <rect width="415" height="360" rx="14" fill="url(#cardDark)" stroke="#10b981" stroke-width="2" filter="url(#shadow)"/>
+
+    <!-- Header Badge -->
+    <rect x="0" y="0" width="415" height="48" rx="14" fill="url(#greenGrad)"/>
+    <rect x="0" y="34" width="415" height="14" fill="#059669"/>
+    <circle cx="28" cy="24" r="8" fill="#ecfdf5"/>
+    <path d="M24 24 L27 27 L33 21" stroke="#059669" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+    <text x="46" y="29" fill="#ffffff" font-size="15" font-weight="700">LABORATORIO FÍSICO (100% COMPLETADO)</text>
+
+    <!-- Content Items -->
+    <g transform="translate(18, 62)">
+      <!-- Item 1 -->
+      <rect width="379" height="36" rx="6" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+      <circle cx="16" cy="18" r="5" fill="#10b981"/>
+      <text x="32" y="22" fill="#f1f5f9" font-size="12.5" font-weight="600">VLAN 80 Conmutación Física</text>
+      <text x="215" y="22" fill="#94a3b8" font-size="11.5">(MikroTik Bridge Filtering)</text>
+
+      <!-- Item 2 -->
+      <g transform="translate(0, 42)">
+        <rect width="379" height="36" rx="6" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+        <circle cx="16" cy="18" r="5" fill="#10b981"/>
+        <text x="32" y="22" fill="#f1f5f9" font-size="12.5" font-weight="600">DHCP Clúster Failover Hot-Standby</text>
+        <text x="250" y="22" fill="#94a3b8" font-size="11.5">(RPi + VM Linux)</text>
+      </g>
+
+      <!-- Item 3 -->
+      <g transform="translate(0, 84)">
+        <rect width="379" height="36" rx="6" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+        <circle cx="16" cy="18" r="5" fill="#10b981"/>
+        <text x="32" y="22" fill="#f1f5f9" font-size="12.5" font-weight="600">Reservas Estáticas por MAC</text>
+        <text x="210" y="22" fill="#94a3b8" font-size="11.5">(Notebook en 172.18.2.229)</text>
+      </g>
+
+      <!-- Item 4 -->
+      <g transform="translate(0, 126)">
+        <rect width="379" height="36" rx="6" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+        <circle cx="16" cy="18" r="5" fill="#10b981"/>
+        <text x="32" y="22" fill="#f1f5f9" font-size="12.5" font-weight="600">Uplink WAN Real 4G/LTE</text>
+        <text x="195" y="22" fill="#94a3b8" font-size="11.5">(iPhone Hotspot 2.4 GHz)</text>
+      </g>
+
+      <!-- Item 5 -->
+      <g transform="translate(0, 168)">
+        <rect width="379" height="36" rx="6" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+        <circle cx="16" cy="18" r="5" fill="#10b981"/>
+        <text x="32" y="22" fill="#f1f5f9" font-size="12.5" font-weight="600">NAT Masquerade + QoS Simple Queue</text>
+        <text x="268" y="22" fill="#94a3b8" font-size="11.5">(2M/4M)</text>
+      </g>
+
+      <!-- Item 6 -->
+      <g transform="translate(0, 210)">
+        <rect width="379" height="36" rx="6" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+        <circle cx="16" cy="18" r="5" fill="#10b981"/>
+        <text x="32" y="22" fill="#f1f5f9" font-size="12.5" font-weight="600">MikroTik Cloud DDNS</text>
+        <text x="175" y="22" fill="#94a3b8" font-size="11.5">+ Diagnóstico NAT/CGNAT</text>
+      </g>
+
+      <!-- Item 7 -->
+      <g transform="translate(0, 252)">
+        <rect width="379" height="36" rx="6" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+        <circle cx="16" cy="18" r="5" fill="#10b981"/>
+        <text x="32" y="22" fill="#f1f5f9" font-size="12.5" font-weight="600">Monitoreo Netwatch</text>
+        <text x="170" y="22" fill="#94a3b8" font-size="11.5">+ Alertas Gmail SMTP TLS</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- Connecting Bridge / Handover Arrow -->
+  <g transform="translate(450, 240)">
+    <line x1="10" y1="20" x2="40" y2="20" stroke="#10b981" stroke-width="3" stroke-dasharray="4,4" marker-end="url(#arrowGreen)"/>
+    <text x="25" y="0" text-anchor="middle" fill="#6ee7b7" font-size="10" font-weight="700">INTEGRACIÓN</text>
+    <text x="25" y="12" text-anchor="middle" fill="#94a3b8" font-size="9">SERVICIOS</text>
+  </g>
+
+  <!-- Right Column: GNS3 Simulación (Purple) -->
+  <g transform="translate(500, 80)">
+    <rect width="415" height="360" rx="14" fill="url(#cardDark)" stroke="#8b5cf6" stroke-width="2" filter="url(#shadow)"/>
+
+    <!-- Header Badge -->
+    <rect x="0" y="0" width="415" height="48" rx="14" fill="url(#purpleGrad)"/>
+    <rect x="0" y="34" width="415" height="14" fill="#6d28d9"/>
+    <circle cx="28" cy="24" r="8" fill="#f5f3ff"/>
+    <text x="28" y="28" text-anchor="middle" fill="#6d28d9" font-size="12" font-weight="800">G</text>
+    <text x="46" y="29" fill="#ffffff" font-size="15" font-weight="700">GNS3 SIMULACIÓN (ETAPA SIGUIENTE)</text>
+
+    <!-- Content Items -->
+    <g transform="translate(18, 62)">
+      <!-- Item 1 -->
+      <rect width="379" height="36" rx="6" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+      <circle cx="16" cy="18" r="5" fill="#8b5cf6"/>
+      <text x="32" y="22" fill="#f1f5f9" font-size="12.5" font-weight="600">Core Switches Cisco MLS</text>
+      <text x="200" y="22" fill="#cbd5e1" font-size="11.5">(SW-CC-MLS, SW-VA-MLS)</text>
+
+      <!-- Item 2 -->
+      <g transform="translate(0, 42)">
+        <rect width="379" height="36" rx="6" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+        <circle cx="16" cy="18" r="5" fill="#8b5cf6"/>
+        <text x="32" y="22" fill="#f1f5f9" font-size="12.5" font-weight="600">Trunk 802.1Q MikroTik CHR ↔ Cisco</text>
+      </g>
+
+      <!-- Item 3 -->
+      <g transform="translate(0, 84)">
+        <rect width="379" height="36" rx="6" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+        <circle cx="16" cy="18" r="5" fill="#8b5cf6"/>
+        <text x="32" y="22" fill="#f1f5f9" font-size="12.5" font-weight="600">Interoperabilidad Spanning Tree</text>
+        <text x="240" y="22" fill="#cbd5e1" font-size="11.5">(RSTP / PVST+)</text>
+      </g>
+
+      <!-- Item 4 -->
+      <g transform="translate(0, 126)">
+        <rect width="379" height="36" rx="6" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+        <circle cx="16" cy="18" r="5" fill="#8b5cf6"/>
+        <text x="32" y="22" fill="#f1f5f9" font-size="12.5" font-weight="600">DHCP Relay Multi-Sitio</text>
+        <text x="195" y="22" fill="#cbd5e1" font-size="11.5">(ip helper-address en SVIs)</text>
+      </g>
+
+      <!-- Item 5 -->
+      <g transform="translate(0, 168)">
+        <rect width="379" height="36" rx="6" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+        <circle cx="16" cy="18" r="5" fill="#8b5cf6"/>
+        <text x="32" y="22" fill="#f1f5f9" font-size="12.5" font-weight="600">Enrutamiento OSPF / RIP</text>
+        <text x="200" y="22" fill="#cbd5e1" font-size="11.5">+ Redundancia HSRP</text>
+      </g>
+
+      <!-- Item 6 -->
+      <g transform="translate(0, 210)">
+        <rect width="379" height="36" rx="6" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+        <circle cx="16" cy="18" r="5" fill="#8b5cf6"/>
+        <text x="32" y="22" fill="#f1f5f9" font-size="12.5" font-weight="600">Listas de Control de Acceso (ACLs)</text>
+        <text x="260" y="22" fill="#cbd5e1" font-size="11.5">y Seguridad</text>
+      </g>
+
+      <!-- Item 7 -->
+      <g transform="translate(0, 252)">
+        <rect width="379" height="36" rx="6" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+        <circle cx="16" cy="18" r="5" fill="#8b5cf6"/>
+        <text x="32" y="22" fill="#f1f5f9" font-size="12.5" font-weight="600">Validación de Clientes por VLAN</text>
+        <text x="245" y="22" fill="#cbd5e1" font-size="11.5">(Sucursales)</text>
+      </g>
+    </g>
+  </g>
+</svg>

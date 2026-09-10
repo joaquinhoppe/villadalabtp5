@@ -1,0 +1,137 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 480" width="100%" height="100%" style="background-color: #0b1329; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
+  <defs>
+    <linearGradient id="boxBg" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="115%">
+      <feDropShadow dx="0" dy="4" stdDeviation="5" flood-color="#000" flood-opacity="0.5"/>
+    </filter>
+    <marker id="arrBlue" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#38bdf8"/>
+    </marker>
+    <marker id="arrRed" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#ef4444"/>
+    </marker>
+    <marker id="arrGreen" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#10b981"/>
+    </marker>
+  </defs>
+
+  <!-- Title -->
+  <text x="480" y="34" text-anchor="middle" fill="#f8fafc" font-size="19" font-weight="700" letter-spacing="0.5">MONITOREO PROACTIVO NETWATCH Y ALERTAS GMAIL SMTP TLS</text>
+  <text x="480" y="56" text-anchor="middle" fill="#94a3b8" font-size="12.5">Supervisión autónoma por ICMP y notificación instantánea ante fallas y recuperaciones</text>
+
+  <!-- Left: 4 ICMP Targets -->
+  <g transform="translate(40, 85)" filter="url(#shadow)">
+    <rect width="250" height="350" rx="12" fill="url(#boxBg)" stroke="#38bdf8" stroke-width="1.5"/>
+    <rect x="0" y="0" width="250" height="36" rx="12" fill="#0369a1"/>
+    <rect x="0" y="24" width="250" height="12" fill="#0369a1"/>
+    <text x="125" y="24" text-anchor="middle" fill="#ffffff" font-size="13" font-weight="700">📡 SONDAS ICMP (CAPA 3)</text>
+
+    <!-- Probe 1 -->
+    <g transform="translate(15, 50)">
+      <rect width="220" height="60" rx="6" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+      <circle cx="15" cy="20" r="5" fill="#10b981"/>
+      <text x="30" y="24" fill="#38bdf8" font-size="12" font-weight="700">8.8.8.8</text>
+      <text x="30" y="44" fill="#94a3b8" font-size="10.5">Internet Global (WAN Pública)</text>
+    </g>
+
+    <!-- Probe 2 -->
+    <g transform="translate(15, 120)">
+      <rect width="220" height="60" rx="6" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+      <circle cx="15" cy="20" r="5" fill="#10b981"/>
+      <text x="30" y="24" fill="#38bdf8" font-size="12" font-weight="700">172.20.10.1</text>
+      <text x="30" y="44" fill="#94a3b8" font-size="10.5">Gateway Celular (iPhone)</text>
+    </g>
+
+    <!-- Probe 3 -->
+    <g transform="translate(15, 190)">
+      <rect width="220" height="60" rx="6" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+      <circle cx="15" cy="20" r="5" fill="#10b981"/>
+      <text x="30" y="24" fill="#34d399" font-size="12" font-weight="700">172.18.2.227</text>
+      <text x="30" y="44" fill="#94a3b8" font-size="10.5">DHCP Primario (Raspberry Pi)</text>
+    </g>
+
+    <!-- Probe 4 -->
+    <g transform="translate(15, 260)">
+      <rect width="220" height="60" rx="6" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+      <circle cx="15" cy="20" r="5" fill="#10b981"/>
+      <text x="30" y="24" fill="#818cf8" font-size="12" font-weight="700">172.18.2.228</text>
+      <text x="30" y="44" fill="#94a3b8" font-size="10.5">DHCP Secundario (VM Linux)</text>
+    </g>
+  </g>
+
+  <!-- Probe Arrows -->
+  <line x1="295" y1="260" x2="350" y2="260" stroke="#38bdf8" stroke-width="2.5" marker-end="url(#arrBlue)"/>
+  <text x="322" y="248" text-anchor="middle" fill="#7dd3fc" font-size="10" font-weight="600">ECHO</text>
+
+  <!-- Center: MikroTik Netwatch Daemon -->
+  <g transform="translate(355, 120)" filter="url(#shadow)">
+    <rect width="250" height="280" rx="12" fill="url(#boxBg)" stroke="#2563eb" stroke-width="2"/>
+    <rect x="0" y="0" width="250" height="38" rx="12" fill="#1d4ed8"/>
+    <rect x="0" y="26" width="250" height="12" fill="#1d4ed8"/>
+    <text x="125" y="25" text-anchor="middle" fill="#ffffff" font-size="13" font-weight="700">🖧 MIKROTIK NETWATCH</text>
+
+    <g transform="translate(15, 55)">
+      <rect width="220" height="42" rx="6" fill="#1e293b" stroke="#3b82f6" stroke-width="1"/>
+      <text x="12" y="18" fill="#93c5fd" font-size="11" font-weight="700">Frecuencia de Muestreo</text>
+      <text x="12" y="34" fill="#f8fafc" font-size="10.5">interval=10s · timeout=800ms</text>
+    </g>
+
+    <g transform="translate(15, 108)">
+      <rect width="220" height="45" rx="6" fill="#450a0a" stroke="#ef4444" stroke-width="1"/>
+      <text x="12" y="18" fill="#fca5a5" font-size="11" font-weight="700">Disparador DOWN Script</text>
+      <text x="12" y="34" fill="#fecaca" font-size="10">Registro en Log + Alerta Inmediata</text>
+    </g>
+
+    <g transform="translate(15, 163)">
+      <rect width="220" height="45" rx="6" fill="#064e3b" stroke="#10b981" stroke-width="1"/>
+      <text x="12" y="18" fill="#6ee7b7" font-size="11" font-weight="700">Disparador UP Script</text>
+      <text x="12" y="34" fill="#a7f3d0" font-size="10">Notificación de Restablecimiento</text>
+    </g>
+
+    <g transform="translate(15, 220)">
+      <rect width="220" height="42" rx="6" fill="#1e293b" stroke="#475569" stroke-width="1"/>
+      <text x="12" y="18" fill="#e2e8f0" font-size="10.5" font-weight="600">Protección on-error={}</text>
+      <text x="12" y="33" fill="#94a3b8" font-size="9.5">Evita colapso si WAN cae</text>
+    </g>
+  </g>
+
+  <!-- Top Action Arrow to Syslog -->
+  <path d="M 610 180 L 670 180" fill="none" stroke="#f59e0b" stroke-width="2" marker-end="url(#arrBlue)"/>
+
+  <!-- Bottom Action Arrow to Mail -->
+  <path d="M 610 320 L 670 320" fill="none" stroke="#ef4444" stroke-width="2" marker-end="url(#arrRed)"/>
+
+  <!-- Right: Actions Executed -->
+  <!-- 1. Syslog Box -->
+  <g transform="translate(680, 120)" filter="url(#shadow)">
+    <rect width="240" height="110" rx="10" fill="url(#boxBg)" stroke="#f59e0b" stroke-width="1.5"/>
+    <rect x="0" y="0" width="240" height="28" rx="10" fill="#b45309"/>
+    <rect x="0" y="18" width="240" height="10" fill="#b45309"/>
+    <text x="120" y="19" text-anchor="middle" fill="#ffffff" font-size="11.5" font-weight="700">📝 ROUTEROS LOG LOCAL</text>
+
+    <text x="14" y="50" fill="#fef08a" font-size="10" font-weight="600">:log warning "[NETWATCH DOWN]..."</text>
+    <text x="14" y="70" fill="#bbf7d0" font-size="10" font-weight="600">:log info "[NETWATCH UP]..."</text>
+    <text x="14" y="94" fill="#94a3b8" font-size="9.5">Trazabilidad con timestamp local</text>
+  </g>
+
+  <!-- 2. Gmail SMTP TLS Box -->
+  <g transform="translate(680, 255)" filter="url(#shadow)">
+    <rect width="240" height="180" rx="10" fill="url(#boxBg)" stroke="#ef4444" stroke-width="1.5"/>
+    <rect x="0" y="0" width="240" height="28" rx="10" fill="#dc2626"/>
+    <rect x="0" y="18" width="240" height="10" fill="#dc2626"/>
+    <text x="120" y="19" text-anchor="middle" fill="#ffffff" font-size="11.5" font-weight="700">📧 GMAIL SMTP TLS (/tool e-mail)</text>
+
+    <text x="14" y="50" fill="#f1f5f9" font-size="10">Servidor: smtp.gmail.com:587</text>
+    <text x="14" y="68" fill="#f1f5f9" font-size="10">Cifrado: STARTTLS (App Password)</text>
+    <text x="14" y="86" fill="#94a3b8" font-size="9.5">De: sistema.admision.its@gmail.com</text>
+    <text x="14" y="104" fill="#38bdf8" font-size="9.5">Para: valentinomateoolmedo@gmail.com</text>
+
+    <!-- Badge Mobile Alert -->
+    <rect x="14" y="122" width="212" height="42" rx="6" fill="#450a0a" stroke="#f87171" stroke-width="1"/>
+    <text x="120" y="139" text-anchor="middle" fill="#fca5a5" font-size="10" font-weight="700">📱 Alerta Instantánea en Celular</text>
+    <text x="120" y="154" text-anchor="middle" fill="#ffffff" font-size="9">"[TP5][DOWN] Raspberry DHCP Primary"</text>
+  </g>
+</svg>
